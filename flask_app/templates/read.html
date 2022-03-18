@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- based on the folder structure on the right -->
+    <!-- linking a css style sheet -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='static/style.css') }}"
+    />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>test</h1>
+    {% for user in all_users %}
+    <table>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>created at:</th>
+        <th>actions</th>
+      </tr>
+      <tr>
+        <th>{{user.first_name}}</th>
+        <th>{{user.last_name}}</th>
+        <th>{{user.email}}</th>
+        <th>{{user.created_at}}</th>
+        <th>
+          <a href="/users/{{user.id}}">show</a
+          ><a href="/users/edit/{{user.id}}">edit</a
+          ><a href="/users/{{user.id}}/delete">delete user</a>
+        </th>
+      </tr>
+    </table>
+    {% endfor %}
+    <br />
+    <a href="/user/new">new user</a>
+  </body>
+</html>

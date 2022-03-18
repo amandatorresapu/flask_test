@@ -1,0 +1,13 @@
+<form action="/users/update/{{user.id}}" method="post">
+  <label>first name</label>
+  <input type="text" name="first_name" value="{{user.first_name}}" />
+  <label>last name</label>
+  <input type="text" name="last_name" value="{{user.last_name}}" />
+  <label>email</label>
+  <input type="text" name="email" value="{{user.email}}" />
+  <input type="submit" value="update user!" />
+</form>
+
+<br />
+
+<a href="/">home</a>
